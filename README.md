@@ -4,6 +4,27 @@ Sync data from tncompass-ts to React
 
 ## Usage
 
+Init Encompass World:
+
+```js
+import { EntitySyncer } from 'react-encompass-ecs';
+
+export function initGameWorld() {
+  const worldBuilder = new WorldBuilder();
+  worldBuilder.add_engine(TileMapSpawner);
+  worldBuilder.add_engine(BoxSpawner);
+  worldBuilder.add_engine(MotionEngine);
+  worldBuilder.add_engine(VelocityEngine);
+
+  const instantizationMessage = worldBuilder.emit_message(instantizationMessage);
+  instantizationMessage.mapDefinition = ``;
+
+  const entityStore = new EntitySyncer(worldBuilder);
+  const world = worldBuilder.build();
+  return { world, entityStore };
+}
+```
+
 Set up game loop:
 
 ```js
@@ -39,6 +60,8 @@ export function useGame(): [GameState, MainLoop] {
 Use gameloop in React app:
 
 ```jsx
+import { Provider as EntityProvider, IEntityMap, useComponent } from 'react-encompass-ecs';
+
 export default function App() {
   const [currentGameEntities] = useGame();
   return (
@@ -62,7 +85,7 @@ export default function App() {
 }
 ```
 
-Draw something:
+Draw something with React libraries, for example, `react-three-fiber`:
 
 ```jsx
 function Plane() {
@@ -91,5 +114,27 @@ function Scene() {
       <Plane />
     </>
   );
+}
+```
+
+Spawn entities:
+
+```js
+import { ReactSyncComponent } from 'react-encompass-ecs';
+
+@Reads(MapInstantizationMessage)
+export class BoxSpawner extends Spawner {
+  public spawn(message: MapInstantizationMessage) {
+    for (let count = 0; count < 100; count += 1) {
+      const boxEntity = this.create_entity();
+      boxEntity.add_component(ReactSyncComponent);
+      const position = boxEntity.add_component(PositionComponent);
+      position.x = 0;
+      position.y = 0;
+      const velocity = boxEntity.add_component(VelocityComponent);
+      velocity.x = 3 * Math.random();
+      velocity.y = 3 * Math.random();
+    }
+  }
 }
 ```
