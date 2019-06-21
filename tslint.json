@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier",
+    "tslint-react",
+    "tslint-immutable",
+    "tslint-sonarts",
+    "tslint-react-hooks",
+    "tslint-clean-code"
+  ],
+  "rules": {
+    "curly": [true],
+    "no-submodule-imports": [true, "rxjs", "react-i18next", "react-icons"],
+    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+    "quotemark": [true, "single", "jsx-double"],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "max-classes-per-file": false,
+    "no-nested-template-literals": false
+  }
+}
