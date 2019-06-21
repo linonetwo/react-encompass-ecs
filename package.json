@@ -4,7 +4,6 @@
   "description": "Sync data from tncompass-ts to React",
   "source": "src/index.ts",
   "main": "dist/react-encompass-ecs.js",
-  "module": "dist/react-encompass-ecs.mjs",
   "unpkg": "dist/react-encompass-ecs.umd.js",
   "scripts": {
     "build": "microbundle -ts --jsx React.createElement",
