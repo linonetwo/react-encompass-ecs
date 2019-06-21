@@ -1,6 +1,6 @@
 # react-encompass-ecs
 
-Sync data from tncompass-ts to React
+Sync data from encompass-ecs to React
 
 ## Usage
 
