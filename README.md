@@ -4,6 +4,8 @@ Sync data from tncompass-ts to React
 
 ## Usage
 
+Full example: [react-encompass-ecs-example](https://github.com/linonetwo/react-encompass-ecs-example)
+
 Init Encompass World:
 
 ```js
