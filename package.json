@@ -1,6 +1,6 @@
 {
   "name": "react-encompass-ecs",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Sync data from encompass-ts to React",
   "source": "src/index.ts",
   "main": "dist/react-encompass-ecs.js",
