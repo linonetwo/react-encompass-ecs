@@ -1,11 +1,12 @@
 {
   "name": "react-encompass-ecs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Sync data from encompass-ecs to React",
   "source": "src/index.ts",
   "main": "dist/react-encompass-ecs.js",
   "unpkg": "dist/react-encompass-ecs.umd.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "microbundle -ts --jsx React.createElement",
     "dev": "microbundle -ts --jsx React.createElement watch"
   },
