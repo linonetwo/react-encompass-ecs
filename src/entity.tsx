@@ -25,9 +25,12 @@ export const GameEntitiesContext = createContext<IEntityMap>({});
  *   const position = box ? box[0] : { x: 20, y: 20 };
  * ```
  * Above example return singleton component inside box, if you warp some component in array, it will return an array of that type of components (not supported now due to my TypeScript knowledge limitation)
+ * 
+ * @param {boolean} [forceRender=false] reRender component on draw tick, only enable this when update you component 60 times per second is not costly
  */
 export function useComponent<TComponent extends Component, T extends Type<TComponent> /* | Array<Type<TComponent>> */>(
   descriptions: { [name: string]: /* T[] */ Array<Type<TComponent>> },
+  forceRender: boolean = false,
   context: Context<IEntityMap> = GameEntitiesContext,
 ): {
   [name: string]: Array<
@@ -75,7 +78,7 @@ export function useComponent<TComponent extends Component, T extends Type<TCompo
     }
     return result;
   }, [selectedEntities]);
-  useUpdate();
+  useUpdate(forceRender);
 
   return selectedComponents;
 }
