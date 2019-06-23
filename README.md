@@ -6,6 +6,8 @@ Sync data from encompass-ecs to React
 
 Full example: [react-encompass-ecs-example](https://github.com/linonetwo/react-encompass-ecs-example)
 
+This example uses `encompass-ecs` and `react-three-fiber`.
+
 ### Use data inside components, and update data inside components
 
 Draw something with React libraries, for example, `react-three-fiber`:
