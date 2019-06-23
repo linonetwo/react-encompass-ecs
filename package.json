@@ -1,8 +1,9 @@
 {
   "name": "react-encompass-ecs",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "Sync data from encompass-ecs to React",
   "source": "src/index.ts",
+  "typings": "dist/index.d.ts",
   "main": "dist/react-encompass-ecs.js",
   "unpkg": "dist/react-encompass-ecs.umd.js",
   "scripts": {
@@ -15,14 +16,27 @@
     "encompass-gc-optimized-collections": "^1.0.3",
     "immer": "^3.1.3",
     "lodash": "^4.17.11",
-    "microbundle": "^0.11.0",
     "react": "^16.8.6",
     "rxjs": "^6.5.2",
     "use-immer": "^0.3.2"
   },
+  "peerDependencies": {
+    "encompass-ecs": "^0.27.4",
+    "encompass-gc-optimized-collections": "^1.0.3",
+    "react": "^16.8.6"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.134",
-    "@types/react": "^16.8.22"
+    "@types/react": "^16.8.22",
+    "microbundle": "^0.11.0",
+    "tslint": "^5.18.0",
+    "tslint-clean-code": "^0.2.9",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-immutable": "^6.0.0",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.1.1",
+    "tslint-sonarts": "^1.9.0",
+    "typescript": "^3.5.2"
   },
   "repository": {
     "type": "git",

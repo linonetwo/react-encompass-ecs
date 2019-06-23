@@ -19,11 +19,6 @@
     "noEmit": true,
     "jsx": "preserve",
     "skipLibCheck": true,
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ],
     "allowSyntheticDefaultImports": true
   },
   "include": [
